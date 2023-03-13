@@ -53,9 +53,10 @@ This project will be managing tools with functionality inherent in similar proje
   - UserId
   - ProjectId
 ```
+
+# HTML tags
 <img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 30" src="https://user-images.githubusercontent.com/75493220/224713826-323cabd7-3734-41a3-aaf8-d067c76c3c5f.png">
 <img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 27" src="https://user-images.githubusercontent.com/75493220/224713859-36abecb0-a79e-4fb9-b998-6ce4a6ad6f28.png">
 <img width="1440" alt="Снимок экрана 2023-03-13 в 16 03 27" src="https://user-images.githubusercontent.com/75493220/224713877-39deccaa-df17-4f86-85dd-e0ef0be8748e.png">
 <img width="1440" alt="Снимок экрана 2023-03-13 в 16 03 08" src="https://user-images.githubusercontent.com/75493220/224713899-03dcb780-b652-4f39-a058-e839cdf2b1f4.png">
 <img width="1440" alt="Снимок экрана 2023-03-13 в 16 02 56" src="https://user-images.githubusercontent.com/75493220/224713914-28c3a8eb-0b78-459d-91e0-180695fefe26.png">
-
