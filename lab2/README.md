@@ -60,3 +60,6 @@ This project will be managing tools with functionality inherent in similar proje
 <img width="1440" alt="Снимок экрана 2023-03-13 в 16 03 27" src="https://user-images.githubusercontent.com/75493220/224713877-39deccaa-df17-4f86-85dd-e0ef0be8748e.png">
 <img width="1440" alt="Снимок экрана 2023-03-13 в 16 03 08" src="https://user-images.githubusercontent.com/75493220/224713899-03dcb780-b652-4f39-a058-e839cdf2b1f4.png">
 <img width="1440" alt="Снимок экрана 2023-03-13 в 16 02 56" src="https://user-images.githubusercontent.com/75493220/224713914-28c3a8eb-0b78-459d-91e0-180695fefe26.png">
+
+# Figma mock up
+https://www.figma.com/proto/T3egfXd4zALlCzsaVpFFDW/Untitled?node-id=1%3A2
