@@ -1,0 +1,118 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0 0;
+}
+
+.navbar {
+    background-color: rgb(33, 33, 33);
+    overflow: hidden;
+}
+
+.navbar-item {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar-item:last-child:not([class="menu-image"]) {
+    float: right;
+}
+
+.navbar-item:hover {
+    color: rgb(210, 210, 210);
+}
+
+.menu-line {
+    width: 25px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: 3px 0;
+}
+
+.menu-image:hover>.menu-line {
+    background-color: rgb(210, 210, 210);
+}
+
+.main-view {
+    display: flex;
+}
+
+.tasks-container {
+    flex-basis: calc(95% / 3);
+    max-width: calc(95% / 3);
+    height: calc(100vh - 48px);
+    flex-grow: 1;
+    background-color: rgb(129, 129, 129);
+}
+
+.project-members-view {
+    width: 5%;
+    height: calc(100vh - 48px);
+    background-color: rgb(46, 46, 46);
+}
+
+.task-type {
+    height: 8%;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.to-do {
+    background-color: rgb(46, 215, 216);
+}
+
+.in-progress {
+    background-color: rgb(0, 170, 255);
+}
+
+.complete {
+    background-color: rgb(161, 121, 242);
+}
+
+.task-type-text {
+    padding: 17px;
+    margin: 0 0;
+}
+
+.task-card {
+    margin: 15px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgb(68, 68, 68);
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    /* скрывает все, что выходит за пределы элемента */
+}
+
+.task-card:hover {
+    box-shadow: 0px 5px 20px rgb(68, 68, 68);
+}
+
+.task-text {
+    margin: 0;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    width: calc(100% - 60px); /* ширина, занимаемая текстом (60px - ширина изображения и отступа) */
+  }
+  
+  .task-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px; /* отступ слева */
+  }
+  
