@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body
+    style="background-image: url(./images/defaults/background.jpg); background-size: cover; background-repeat:no-repeat; background-position: fixed;">
     <div class="navbar">
         <a class="navbar-item menu-image">
             <div class="menu-line"></div>
@@ -18,7 +19,13 @@
         </a>
 
         <a class="navbar-item" href="">Project</a>
-        <a class="navbar-item" href="">Krupa@pochta</a>
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="myFunction()">Krupa</button>
+            <div class="dropdown-content" id="dropdown-content">
+                <a>Profile</a>
+                <a>Log out</a>
+            </div>
+        </div>
     </div>
 
     <div class="main-view">
@@ -27,14 +34,18 @@
                 <h2 class="task-type-text">To do</h2>
             </div>
             <div class="task-card">
-                <h3 class="task-text">
-                    Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1
-                </h3>
-                <img class="task-image" src="./images/IMG_2735.JPG">
-                </img>
+                <div class="task-card-content">
+                    <h3 class="task-text">
+                        Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1
+                    </h3>
+                    <img class="user-image" src="./images/IMG_2735.JPG" />
+                </div>
+                <button class="round-button">
+                    <img style="width: 20px; height: 20px; object-fit: cover;" src="./images/defaults/comment.png">
+                </button>
             </div>
         </div>
-        <div class="tasks-container" style="background-color: rgb(122, 122, 122);">
+        <div class="tasks-container" style="background-color: rgb(122, 122, 122, 0.5);">
             <div class="task-type in-progress">
                 <h2 class="task-type-text">In progress</h2>
             </div>
@@ -45,8 +56,36 @@
             </div>
         </div>
         <div class="project-members-view">
+            <div class="member">
+                <img class="user-image" src="./images/IMG_2735.JPG" />
+                <p>User</p>
+            </div>
+            <div class="member">
+                <img class="user-image" src="./images/IMG_2735.JPG" />
+                <p>User</p>
+            </div>
+            <div class="member">
+                <img class="user-image" src="./images/IMG_2735.JPG" />
+                <p>User</p>
+            </div>
+            <button class="round-button" style="width: 30px; height: 30px;">
+                <p style="margin: 4px 0 0 0; font-size: large;">+</p>
+            </button>
         </div>
     </div>
 </body>
+
+<script>
+    function myFunction() {
+        element = document.getElementById("dropdown-content")
+        display = element.style.display
+        if (display === 'grid') {
+            element.style.display = 'none'
+        }
+        else {
+            element.style.display = 'grid'
+        }
+    }
+</script>
 
 </html>
