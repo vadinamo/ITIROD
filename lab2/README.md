@@ -55,11 +55,12 @@ This project will be managing tools with functionality inherent in similar proje
 ```
 
 # HTML tags
-<img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 30" src="https://user-images.githubusercontent.com/75493220/224713826-323cabd7-3734-41a3-aaf8-d067c76c3c5f.png">
-<img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 27" src="https://user-images.githubusercontent.com/75493220/224713859-36abecb0-a79e-4fb9-b998-6ce4a6ad6f28.png">
-<img width="1440" alt="Снимок экрана 2023-03-13 в 16 03 27" src="https://user-images.githubusercontent.com/75493220/224713877-39deccaa-df17-4f86-85dd-e0ef0be8748e.png">
-<img width="1440" alt="Снимок экрана 2023-03-13 в 16 03 08" src="https://user-images.githubusercontent.com/75493220/224713899-03dcb780-b652-4f39-a058-e839cdf2b1f4.png">
-<img width="1440" alt="Снимок экрана 2023-03-13 в 16 02 56" src="https://user-images.githubusercontent.com/75493220/227555889-1a06ed59-af30-4a49-9560-e320630ed398.png">
+<img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 27" src="https://user-images.githubusercontent.com/75493220/227563564-0efdc5e9-b561-4a93-8098-8c2cbc027a17.png">
+<img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 30" src="https://user-images.githubusercontent.com/75493220/227563602-e5618ac3-99c5-4469-a4ad-d41d02b18<img width="778" alt="Снимок экрана 2023-03-24 в 17 56 52" src="https://user-images.githubusercontent.com/75493220/227563618-9020196d-5d52-4012-85d9-3e5941766510.png">
+43e.png">
+<img width="778" alt="Снимок экрана 2023-03-24 в 17 57 01" src="https://user-images.githubusercontent.com/75493220/227563629-00f0dd6c-a0a6-4c21-bac9-a1453f1dc801.png">
+<img width="884" alt="Снимок экрана 2023-03-24 в 18 02 50" src="https://user-images.githubusercontent.com/75493220/227563641-35ff261a-b8ac-44f0-b91b-d0dab5292f43.png">
+
 
 
 # Figma mock up
