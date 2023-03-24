@@ -55,11 +55,11 @@ This project will be managing tools with functionality inherent in similar proje
 ```
 
 # HTML tags
-<img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 27" src="https://user-images.githubusercontent.com/75493220/227563564-0efdc5e9-b561-4a93-8098-8c2cbc027a17.png">
-<img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 30" src="https://user-images.githubusercontent.com/75493220/227563602-e5618ac3-99c5-4469-a4ad-d41d02b18<img width="778" alt="Снимок экрана 2023-03-24 в 17 56 52" src="https://user-images.githubusercontent.com/75493220/227563618-9020196d-5d52-4012-85d9-3e5941766510.png">
-43e.png">
-<img width="778" alt="Снимок экрана 2023-03-24 в 17 57 01" src="https://user-images.githubusercontent.com/75493220/227563629-00f0dd6c-a0a6-4c21-bac9-a1453f1dc801.png">
-<img width="884" alt="Снимок экрана 2023-03-24 в 18 02 50" src="https://user-images.githubusercontent.com/75493220/227563641-35ff261a-b8ac-44f0-b91b-d0dab5292f43.png">
+<img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 27" src="https://user-images.githubusercontent.com/75493220/227563981-de23faf3-7ff8-4d93-a9b1-f47f090a9309.png">
+<img width="1440" alt="Снимок экрана 2023-03-13 в 16 04 30" src="https://user-images.githubusercontent.com/75493220/227564027-9163ace3-ebb8-47e2-835a-256e0c8d9cb1.png">
+<img width="1440" alt="Снимок экрана 2023-03-24 в 17 56 52" src="https://user-images.githubusercontent.com/75493220/227564054-b2653225-0506-4b95-aebc-9d7b92edfd9a.png">
+<img width="1440" alt="Снимок экрана 2023-03-24 в 17 57 01" src="https://user-images.githubusercontent.com/75493220/227564109-92b5382d-5091-4c79-ae7c-06a706835d23.png">
+<img width="1440" alt="Снимок экрана 2023-03-24 в 18 02 50" src="https://user-images.githubusercontent.com/75493220/227564154-1d02cf8d-f852-41f7-a749-494af5a94959.png">
 
 
 
