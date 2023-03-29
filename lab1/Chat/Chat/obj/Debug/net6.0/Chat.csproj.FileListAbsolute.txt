@@ -1,0 +1,15 @@
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/bin/Debug/net6.0/Chat
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/bin/Debug/net6.0/Chat.deps.json
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/bin/Debug/net6.0/Chat.runtimeconfig.json
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/bin/Debug/net6.0/Chat.dll
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/bin/Debug/net6.0/Chat.pdb
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/Chat.csproj.AssemblyReference.cache
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/Chat.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/Chat.AssemblyInfoInputs.cache
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/Chat.AssemblyInfo.cs
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/Chat.csproj.CoreCompileInputs.cache
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/Chat.dll
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/refint/Chat.dll
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/Chat.pdb
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/Chat.genruntimeconfig.cache
+/Users/vadinamo/Documents/ИТИРОД/lab1/Chat/Chat/obj/Debug/net6.0/ref/Chat.dll
