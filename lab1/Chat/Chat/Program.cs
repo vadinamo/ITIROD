@@ -34,9 +34,9 @@ public class Message
 
 public class Chat
 {
-    private List<Message> Messages { get; } = new List<Message>();
+    private List<Message> Messages { get; } = new();
 
-    public void Fetch()
+    public void Print()
     {
         Console.Clear();
         foreach (var message in Messages.OrderBy(m => m.Time))
@@ -45,7 +45,7 @@ public class Chat
         }
     }
 
-    public void NewMessage(Message message)
+    public void Add(Message message)
     {
         if (message.Text.Equals("/exit"))
         {
@@ -53,7 +53,7 @@ public class Chat
         }
 
         Messages.Add(message);
-        Fetch();
+        Print();
     }
 }
 
@@ -94,7 +94,7 @@ public static class Program
         // Отправка сообщений
         async Task ConnectToChat()
         {
-            Console.WriteLine("Ожидание подключения...");
+            Console.WriteLine("Waiting for connection...");
 
             while (true)
             {
@@ -117,8 +117,7 @@ public static class Program
                 }
             }
         }
-
-
+        
         async Task SendMessageAsync()
         {
             using var sender = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
@@ -126,7 +125,7 @@ public static class Program
             while (true)
             {
                 text = "";
-                Console.Write("Введите сообщение: ");
+                Console.Write("Message: ");
                 var key = Console.ReadKey();
                 while (key.Key != ConsoleKey.Enter)
                 {
@@ -137,8 +136,8 @@ public static class Program
                             text = text[..^1];
                         }
 
-                        chat.Fetch();
-                        Console.Write($"Введите сообщение: {text}");
+                        chat.Print();
+                        Console.Write($"Message: {text}");
 
                         key = Console.ReadKey();
                         continue;
@@ -150,7 +149,7 @@ public static class Program
                 
                 if (string.IsNullOrWhiteSpace(text))
                 {
-                    chat.Fetch();
+                    chat.Print();
                     continue;
                 }
 
@@ -159,7 +158,7 @@ public static class Program
                 await sender.SendToAsync(data, SocketFlags.None, new IPEndPoint(localAddress, sendPort));
                 
                 mes.User = "You";
-                chat.NewMessage(mes);
+                chat.Add(mes);
                 if (text.Equals("/exit"))
                 {
                     sender.Close();
@@ -182,7 +181,7 @@ public static class Program
                     await receiver.ReceiveFromAsync(data, SocketFlags.None, new IPEndPoint(localAddress, sendPort));
                 var mes = new Message(Encoding.UTF8.GetString(data, 0, result.ReceivedBytes));
                 var exitCode = mes.Text;
-                chat.NewMessage(mes);
+                chat.Add(mes);
 
                 if (exitCode.Equals("/exit"))
                 {
@@ -190,7 +189,7 @@ public static class Program
                     Environment.Exit(0);
                 }
 
-                Console.Write($"Введите сообщение: {text}");
+                Console.Write($"Message: {text}");
             }
         }
     }
