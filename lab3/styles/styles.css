@@ -1,0 +1,39 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0 0;
+    background-image: url(../images/defaults/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* отступ слева */
+}
+
+.round-button {
+    border-radius: 50%;
+    border-style: none;
+    background-color: rgb(241, 241, 241);
+    vertical-align: middle;
+}
+
+.plus {
+    width: 30px;
+    height: 30px;
+    margin: 0.5rem auto;
+}
+
+.round-button p {
+    margin: 4px 0 0 0;
+    font-size: large;
+}

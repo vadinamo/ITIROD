@@ -1,0 +1,57 @@
+.sidenav {
+    margin-top: 3.5rem;
+    height: calc(100vh - 3.5rem);
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: rgb(46, 46, 46, 0.8);
+    backdrop-filter: blur(7px);
+    overflow-x: hidden;
+    transition: 0.5s;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+.project {
+    background-color: white;
+    color: black;
+    width: 80%;
+    margin: 0.5rem auto;
+    border-radius: 40px;
+}
+
+.project p {
+    margin: 0.3rem 0;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.current {
+    border: 0.2rem solid rgba(146, 92, 255, 0.482);
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

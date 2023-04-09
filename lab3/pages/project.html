@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/project-members.css">
+    <link rel="stylesheet" href="../styles/tasks.css">
+    <link rel="stylesheet" href="../styles/side-menu.css">
+    <script src="../scripts/nav-dropdown.js"></script>
+    <script src="../scripts/side-menu.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <span class="navbar-item menu-image" onclick="toggleNav()">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </span>
+
+            <h2 class="navbar-item" style="margin: 0; font-size: 1.5rem;">Treplo</h2>
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="myFunction()">Krupa</button>
+                <div class="dropdown-content" id="dropdown-content">
+                    <img src="../images/IMG_2735.JPG" />
+                    <p>User</p>
+                    <p>user@gmail.com</p>
+                    <div style="background-color: rgb(113, 113, 113); height: 2px; width: 100%"></div>
+                    <a>Profile</a>
+                    <a href="./login.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="side-nav" class="sidenav">
+            <h2>Projects</h2>
+            <div style="background-color: white; height: 2px; width: 100%;"></div>
+            <div class="project-container">
+                <a class="project">
+                    <p>jopa</p>
+                </a>
+                <a class="project current">
+                    <p>jopaasdklsamdlkafklslkmflksadlkmgsamkfs
+                        sadfkmldsafkladsmfadslkfasd
+                        fasdfkmdaslkfmadslfmasdf
+                    </p>
+                </a>
+                <a class="project">
+                    <p>jopa</p>
+                </a>
+                <button class="round-button plus">
+                    <p>+</p>
+                </button>
+            </div>
+        </div>
+        <div class="tasks-view" id="tasks-view">
+            <div class="tasks-container">
+                <div class="task-type to-do">
+                    <h1 class="task-type-text">To do</h1>
+                </div>
+                <div class="task-card">
+                    <div class="task-card-content">
+                        <h2 class="task-text">
+                            Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1
+                        </h2>
+                        <img class="user-image" src="../images/IMG_2735.JPG" />
+                    </div>
+                    <a class="round-button">
+                        <img style="width: 20px; height: 20px; object-fit: cover;" src="../images/defaults/comment.png">
+                    </a>
+                </div>
+            </div>
+            <div class="tasks-container" style="background-color: rgb(122, 122, 122, 0.5);">
+                <div class="task-type in-progress">
+                    <h1 class="task-type-text">In progress</h1>
+                </div>
+            </div>
+            <div class="tasks-container">
+                <div class="task-type complete">
+                    <h1 class="task-type-text">Completed</h1>
+                </div>
+            </div>
+        </div>
+        <div class="project-members-view">
+            <div class="member">
+                <img class="user-image" src="../images/IMG_2735.JPG" />
+                <p>User</p>
+            </div>
+            <div class="member">
+                <img class="user-image" src="../images/IMG_2735.JPG" />
+                <p>User</p>
+            </div>
+            <div class="member">
+                <img class="user-image" src="../images/IMG_2735.JPG" />
+                <p>User</p>
+            </div>
+            <button class="round-button plus">
+                <p>+</p>
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>

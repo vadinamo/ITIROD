@@ -1,0 +1,84 @@
+.tasks-view {
+    width: 95vw;
+    float: left;
+    display: flex;
+}
+
+@media screen and (max-width: 900px) {
+    .tasks-view {
+        width: 85vw;
+        overflow-x: scroll
+    }
+}
+
+.tasks-container {
+    overflow-y: scroll;
+    flex-basis: 100%;
+    height: calc(100vh - 3.5rem);
+    flex-grow: 1;
+    background-color: rgb(129, 129, 129, 0.5);
+}
+
+@media screen and (max-width: 900px) {
+    .tasks-container {
+        min-width: 100%;
+    }
+}
+
+.task-type {
+    height: 8%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to-do {
+    background-color: rgb(46, 215, 216);
+}
+
+.in-progress {
+    background-color: rgb(0, 170, 255);
+}
+
+.complete {
+    background-color: rgb(161, 121, 242);
+}
+
+@media screen and (max-width: 900px) {
+    .task-text {
+        font-size: small;
+    }
+}
+
+.task-card {
+    margin: calc(15rem/16);
+    padding: 1.875rem 1.875rem 1.25rem;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgb(68, 68, 68);
+    border-radius: 40px;
+    /* скрывает все, что выходит за пределы элемента */
+}
+
+.task-card:hover {
+    box-shadow: 0px 5px 20px rgb(68, 68, 68);
+}
+
+.task-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.task-text {
+    margin: 0;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    width: calc(100% - 40px - 1.25rem);
+    /* ширина, занимаемая текстом (60px - ширина изображения и отступа) */
+}
