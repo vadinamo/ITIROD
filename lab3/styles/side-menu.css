@@ -45,7 +45,6 @@
     border: 0.2rem solid rgba(146, 92, 255, 0.482);
 }
 
-
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
