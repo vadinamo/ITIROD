@@ -25,8 +25,6 @@
 @media screen and (max-width: 900px) {
     .white-container {
         width: 80vw;
-        height: 100vh;
-        border-radius: 0;
     }
 
     .input-group {
@@ -36,7 +34,7 @@
 }
 
 .underline-input {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 0.5rem;
     display: block;
     border: none;
@@ -57,9 +55,10 @@
     color: #7f7f7f;
     font-size: small;
     margin-left: auto;
+    text-decoration: none;
 }
 
-.fade-button {
+.fade-button {text-align: center;
     margin-top: 2rem;
     background: linear-gradient(to right, #8A2BE2, #00CED1);
     color: white;

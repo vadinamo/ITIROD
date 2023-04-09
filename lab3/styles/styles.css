@@ -7,7 +7,6 @@ body {
     background-image: url(../images/defaults/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: fixed;
     width: 100vw;
     height: 100vh;
 }
