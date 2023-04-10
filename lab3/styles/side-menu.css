@@ -23,6 +23,10 @@
     overflow-y: scroll;
 }
 
+.project-container a {
+    text-decoration: none;
+}
+
 
 .project {
     background-color: white;

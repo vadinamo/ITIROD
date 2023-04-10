@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/auth-pages.css">
+    <link rel="stylesheet" href="../styles/inputs.css">
 </head>
 
 <body>
-    <div class="main-view">
+    <div class="main-view-no-nav">
         <div class="white-container">
             <h1 style="align-self: center;">Log in</h1>
             <form>
@@ -22,9 +22,9 @@
                     <label for="password" class="input-label">Password</label>
                     <input id="password" class="underline-input"
                         style="background-image: url('../images/defaults/lock-icon.png'); margin-bottom: 0.5rem;"
-                        type="text" placeholder="Type your password" />
+                        type="password" placeholder="Type your password" />
                     <a href="./register.html" class="small-link">Don't have an account?</a>
-                    <button class="fade-button" type="submit">Log in</button>
+                    <button class="fade-button" onclick="window.location.href='./project.html';" type="button">Log in</button>
                 </div>
             </form>
         </div>

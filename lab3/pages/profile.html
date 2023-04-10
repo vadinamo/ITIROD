@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/side-menu.css">
+    <link rel="stylesheet" href="../styles/inputs.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <script src="../scripts/nav-dropdown.js"></script>
+    <script src="../scripts/side-menu.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <span class="navbar-item menu-image" onclick="toggleNav()">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </span>
+
+            <h2 class="navbar-item" style="margin: 0; font-size: 1.5rem;">Treplo</h2>
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="myFunction()">Krupa</button>
+                <div class="dropdown-content" id="dropdown-content">
+                    <img src="../images/IMG_2735.JPG" />
+                    <p>User</p>
+                    <p>user@gmail.com</p>
+                    <div style="background-color: rgb(113, 113, 113); height: 2px; width: 100%"></div>
+                    <a href="./profile.html">Profile</a>
+                    <a href="./login.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="side-nav" class="sidenav">
+            <h2>Projects</h2>
+            <div style="background-color: white; height: 2px; width: 100%;"></div>
+            <div class="project-container">
+                <a class="project" href="./project.html">
+                    <p>jopa</p>
+                </a>
+                <a class="project" href="./project.html">
+                    <p>jopaasdklsamdlkafklslkmflksadlkmgsamkfs
+                        sadfkmldsafkladsmfadslkfasd
+                        fasdfkmdaslkfmadslfmasdf
+                    </p>
+                </a>
+                <a class="project" href="./project.html">
+                    <p>jopa</p>
+                </a>
+                <button class="round-button plus">
+                    <p>+</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="main-view">
+            <div class="white-container">
+                <h1 style="align-self: center;">Me</h1>
+                <form>
+                    <div class="profile-group">
+                        <div class="left">
+                            <img class="avatar" src="../images/IMG_2735.JPG">
+                            <button type="button" class="fade-button center-button" onclick="document.getElementById('avatar').click()">Upload</button>
+                            <input id="avatar" type="file" hidden />
+                        </div>
+                        <div class="right">
+                            <label for="username" class="input-label">Username</label>
+                            <input id="username" class="underline-input"
+                                style="background-image: url('../images/defaults/user-icon.png');" type="text"
+                                placeholder="Type your username" value="User" />
+                            <label for="email" class="input-label">Email</label>
+                            <input id="email" class="underline-input"
+                                style="background-image: url('../images/defaults/mail-icon.png');" type="text"
+                                placeholder="Type your email" value="user@gmail.com" />
+                            <label for="password" class="input-label">Password</label>
+                            <input id="password" class="underline-input"
+                                style="background-image: url('../images/defaults/lock-icon.png');" type="password"
+                                placeholder="Type your password" />
+                            <label for="repeat-password" class="input-label">Repeat password</label>
+                            <input id="repeat-password" class="underline-input"
+                                style="background-image: url('../images/defaults/lock-icon.png'); margin-bottom: 0"
+                                type="password" placeholder="Repeat your password" />
+                            <button type="submit" class="fade-button center-button">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

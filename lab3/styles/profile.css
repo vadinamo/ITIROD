@@ -1,0 +1,36 @@
+.profile-group {
+    padding: 2rem;
+}
+
+.profile-group .left {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.profile-group .right {
+    float: right;
+    width: 60%;
+}
+
+@media screen and (max-width: 900px) {
+    .profile-group {
+        display: flex;
+        flex-direction: column;
+    }
+    .profile-group .left {
+        float: unset;
+        width: 100%;
+    }
+    
+    .profile-group .right {
+        float: unset;
+        width: 100%;
+    }
+}
+
+.avatar {
+    max-width: 80%;
+}
