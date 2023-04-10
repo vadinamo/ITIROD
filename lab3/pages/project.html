@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../styles/project-members.css">
     <link rel="stylesheet" href="../styles/tasks.css">
     <link rel="stylesheet" href="../styles/side-menu.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/inputs.css">
     <script src="../scripts/nav-dropdown.js"></script>
     <script src="../scripts/side-menu.js"></script>
 </head>
@@ -101,9 +103,26 @@
                 <img class="user-image" src="../images/IMG_2735.JPG" />
                 <p>User</p>
             </div>
-            <button class="round-button plus">
+            <button class="round-button plus" onclick="location.href='#openModal'">
                 <p>+</p>
             </button>
+        </div>
+        <div id="openModal" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Invite into project</h3>
+                        <a href="#close" title="Close" class="close">×</a>
+                    </div>
+                    <div class="modal-body">
+                        <label for="email" class="input-label">Email</label>
+                        <input id="email" class="underline-input"
+                            style="background-image: url('../images/defaults/mail-icon.png');" type="text"
+                            placeholder="Type your email" />
+                        <button class="fade-button">Sent invitation</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
