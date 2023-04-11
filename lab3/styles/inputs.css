@@ -1,4 +1,5 @@
 .input-group {
+    margin: 0 auto;
     width: calc(100% - 8rem);
     padding: 2rem 4rem;
     display: flex;
@@ -22,7 +23,7 @@
     display: block;
     border: none;
     border-bottom: 1px solid #ccc;
-    width: 87%;
+    width: auto;
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto 60%;

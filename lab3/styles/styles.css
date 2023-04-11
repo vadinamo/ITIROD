@@ -47,10 +47,14 @@ body {
 }
 
 .round-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     border-style: none;
     background-color: rgb(241, 241, 241);
     vertical-align: middle;
+    color: black;
 }
 
 .plus {
@@ -60,7 +64,6 @@ body {
 }
 
 .round-button p {
-    margin: 4px 0 0 0;
     font-size: large;
 }
 
