@@ -1,0 +1,12 @@
+@import url(./_complete/task-view__type_complete.css);
+@import url(./_in-progress/task-view__type_in-progress.css);
+@import url(./_to-do/task-view__type_to-do.css);
+
+.task-view__type {
+    height: 8%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

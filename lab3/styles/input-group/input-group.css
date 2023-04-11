@@ -1,0 +1,17 @@
+@import url(./__input/input-group__input.css);
+@import url(./__label/input-group__label.css);
+
+.input-group {
+    margin: 0 auto;
+    width: calc(100% - 8rem);
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 900px) {
+    .input-group {
+        width: calc(100% - 5rem);
+        padding: 2rem;
+    }
+}

@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/task-view/task-view.css">
+    <link rel="stylesheet" href="../styles/input-group/input-group.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <link rel="stylesheet" href="../styles/project-members.css">
-    <link rel="stylesheet" href="../styles/tasks.css">
     <link rel="stylesheet" href="../styles/side-menu.css">
     <link rel="stylesheet" href="../styles/modal.css">
-    <link rel="stylesheet" href="../styles/inputs.css">
     <script src="../scripts/nav-dropdown.js"></script>
     <script src="../scripts/side-menu.js"></script>
 </head>
@@ -115,11 +115,13 @@
                         <a href="#close" title="Close" class="close">×</a>
                     </div>
                     <div class="modal-body">
-                        <label for="email" class="input-label">Email</label>
-                        <input id="email" class="underline-input"
-                            style="background-image: url('../images/defaults/mail-icon.png'); margin: auto;" type="text"
-                            placeholder="Type email" />
-                        <button class="fade-button">Sent invitation</button>
+                        <div class="input-group">
+                            <label for="email" class="input-group__label">Email</label>
+                            <input id="email" class="input-group__input"
+                                style="background-image: url('../images/defaults/mail-icon.png'); margin: auto;"
+                                type="text" placeholder="Type email" />
+                            <button class="fade-button">Sent invitation</button>
+                        </div>
                     </div>
                 </div>
             </div>

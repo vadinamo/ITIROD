@@ -1,0 +1,11 @@
+@import url(./_accept/invitations__button_accept.css);
+@import url(./_decline/invitations__button_decline.css);
+
+.invitations__button {
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+    margin: auto 0;
+}

@@ -1,0 +1,7 @@
+@import url(./__button/invitations__button.css);
+@import url(./__invite/invitations__invite.css);
+@import url(./__project-name/invitations__project-name.css);
+
+.invitations {
+    margin-bottom: 2rem;
+}

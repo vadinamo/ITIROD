@@ -1,0 +1,12 @@
+.input-group__input {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: auto;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto 60%;
+    padding-left: 2rem;
+}

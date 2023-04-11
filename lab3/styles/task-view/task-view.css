@@ -1,0 +1,18 @@
+@import url(./__card/task-view__card.css);
+@import url(./__card-content/task-view__card-content.css);
+@import url(./__card-text/task-view__card-text.css);
+@import url(./__container/task-view__container.css);
+@import url(./__type/task-view__type.css);
+
+.task-view {
+    width: 95vw;
+    float: left;
+    display: flex;
+}
+
+@media screen and (max-width: 900px) {
+    .task-view {
+        width: 85vw;
+        overflow-x: scroll
+    }
+}

@@ -1,0 +1,11 @@
+.invitations__invite {
+    display: flex;
+    border: 2px solid #ccc;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}
+
+.invitations__invite :first-child {
+    order: -1;
+    margin-right: auto;
+}

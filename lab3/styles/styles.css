@@ -38,6 +38,12 @@ body {
     overflow-y: scroll;
 }
 
+@media screen and (max-width: 900px) {
+    .white-container {
+        width: 80vw;
+    }
+}
+
 .user-image {
     width: 40px;
     height: 40px;
@@ -87,4 +93,11 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.small-link {
+    color: #7f7f7f;
+    font-size: small;
+    margin-left: auto;
+    text-decoration: none;
 }
