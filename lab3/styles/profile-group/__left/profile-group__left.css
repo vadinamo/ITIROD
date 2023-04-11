@@ -1,0 +1,14 @@
+.profile-group__left {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+@media screen and (max-width: 900px) {
+    .profile-group__left {
+        float: unset;
+        width: 100%;
+    }
+}

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/nav.css">
     <link rel="stylesheet" href="../styles/side-menu.css">
     <link rel="stylesheet" href="../styles/input-group/input-group.css">
-    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/profile-group/profile-group.css">
     <link rel="stylesheet" href="../styles/tabs.css">
     <link rel="stylesheet" href="../styles/invitations/invitations.css">
     <script src="../scripts/nav-dropdown.js"></script>
@@ -75,13 +75,13 @@
                 <div id="profile" class="tabcontent">
                     <form>
                         <div class="profile-group">
-                            <div class="left">
-                                <img class="avatar" src="../images/IMG_2735.JPG">
+                            <div class="profile-group__left">
+                                <img class="profile-group__avatar" src="../images/IMG_2735.JPG">
                                 <button type="button" class="fade-button center-button"
                                     onclick="document.getElementById('avatar').click()">Upload</button>
                                 <input id="avatar" type="file" hidden />
                             </div>
-                            <div class="right">
+                            <div class="profile-group__right">
                                 <div class="input-group">
                                     <label for="username" class="input-group__label">Username</label>
                                     <input id="username" class="input-group__input"

@@ -1,0 +1,14 @@
+@import url(./__avatar/profile-group__avatar.css);
+@import url(./__left/profile-group__left.css);
+@import url(./__right/profile-group__right.css);
+
+.profile-group {
+    padding: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+    .profile-group {
+        display: flex;
+        flex-direction: column;
+    }
+}

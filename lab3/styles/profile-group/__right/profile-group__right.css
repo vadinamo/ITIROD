@@ -1,0 +1,11 @@
+.profile-group__right {
+    float: right;
+    width: 60%;
+}
+
+@media screen and (max-width: 900px) {
+    .profile-group__right {
+        float: unset;
+        width: 100%;
+    }
+}
