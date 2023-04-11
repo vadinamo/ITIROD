@@ -57,14 +57,19 @@ body {
     color: black;
 }
 
+.round-button p {
+    font-size: large;
+}
+
+.round-button img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 .plus {
     width: 30px;
     height: 30px;
     margin: 0.5rem auto;
-}
-
-.round-button p {
-    font-size: large;
 }
 
 .fade-button {
