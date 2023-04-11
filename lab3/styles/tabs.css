@@ -1,0 +1,17 @@
+.tab-buttons-containter {
+    display: flex;
+    background-image: linear-gradient(to right, #8A2BE2, #00CED1);
+}
+
+.tab-buttons-containter button {
+    padding: 1rem;
+    background: none;
+    width: 50%;
+    height: 100%;
+    border: none;
+    color: white;
+}
+
+.tab-buttons-containter button.active {
+    background-color: #3131317f;
+}
