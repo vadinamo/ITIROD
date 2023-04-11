@@ -1,17 +1,17 @@
-.tasks-view {
+.task-view {
     width: 95vw;
     float: left;
     display: flex;
 }
 
 @media screen and (max-width: 900px) {
-    .tasks-view {
+    .task-view {
         width: 85vw;
         overflow-x: scroll
     }
 }
 
-.tasks-container {
+.task-view__container {
     overflow-y: scroll;
     flex-basis: 100%;
     height: calc(100vh - 3.5rem);
@@ -20,12 +20,12 @@
 }
 
 @media screen and (max-width: 900px) {
-    .tasks-container {
+    .task-view__container {
         min-width: 100%;
     }
 }
 
-.task-type {
+.task-view__type {
     height: 8%;
     width: 100%;
     color: white;
@@ -34,25 +34,19 @@
     align-items: center;
 }
 
-.to-do {
+.task-view__type_to-do {
     background-color: rgb(46, 215, 216);
 }
 
-.in-progress {
+.task-view__type_in-progress {
     background-color: rgb(0, 170, 255);
 }
 
-.complete {
+.task-view__type_complete {
     background-color: rgb(161, 121, 242);
 }
 
-@media screen and (max-width: 900px) {
-    .task-text {
-        font-size: small;
-    }
-}
-
-.task-card {
+.task-view__card {
     margin: calc(15rem/16);
     padding: 1.875rem 1.875rem 1.25rem;
     background-color: white;
@@ -61,18 +55,18 @@
     /* скрывает все, что выходит за пределы элемента */
 }
 
-.task-card:hover {
+.task-view__card:hover {
     box-shadow: 0px 5px 20px rgb(68, 68, 68);
 }
 
-.task-card-content {
+.task-view__card-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
 }
 
-.task-text {
+.task-view__card-text {
     margin: 0;
     word-wrap: break-word;
     display: -webkit-box;
@@ -80,5 +74,10 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     width: calc(100% - 40px - 1.25rem);
-    /* ширина, занимаемая текстом (60px - ширина изображения и отступа) */
+}
+
+@media screen and (max-width: 900px) {
+    .task-view__card-text {
+        font-size: small;
+    }
 }

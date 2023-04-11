@@ -17,7 +17,7 @@
     }
 }
 
-.underline-input {
+.input-group__input {
     margin-bottom: 1.5rem;
     padding: 0.5rem;
     display: block;
@@ -30,7 +30,7 @@
     padding-left: 2rem;
 }
 
-.input-label {
+.input-group__label {
     color: #7f7f7f;
     text-align: left;
 }
