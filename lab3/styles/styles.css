@@ -5,10 +5,9 @@
 body {
     margin: 0 0;
     background-image: url(../images/defaults/background.jpg);
-    background-size: cover;
+    background-size: 100%;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
 }
 
 .main-view {
