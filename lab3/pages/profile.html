@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="../styles/profile-group/profile-group.css">
     <link rel="stylesheet" href="../styles/tabs.css">
     <link rel="stylesheet" href="../styles/invitations/invitations.css">
-    <script src="../scripts/nav-dropdown.js"></script>
     <script src="../scripts/side-menu.js"></script>
-    <script src="../scripts/tabs.js"></script>
 </head>
 
 <body>
@@ -29,7 +27,7 @@
 
             <h2 class="navbar__item" style="margin: 0; font-size: 1.5rem;">Treplo</h2>
             <div class="dropdown">
-                <button class="dropdown__btn" onclick="myFunction()">Krupa</button>
+                <span class="dropdown__btn">Krupa</span>
                 <div class="dropdown__content" id="dropdown-content">
                     <img src="../images/IMG_2735.JPG" />
                     <p>User</p>
@@ -67,10 +65,13 @@
         <div class="main-view">
             <div class="white-container">
                 <div class="tab-buttons-containter">
-                    <button type="submit" class="center-button tablink active" onclick="openTab(event, 'profile')">Edit
-                        profile</button>
-                    <button type="submit" class="center-button tablink"
-                        onclick="openTab(event, 'invitations')">Invitations</button>
+                    <button type="submit" class="center-button tablink" onclick="location.href='#profile'">
+                        Edit
+                        profile
+                    </button>
+                    <button type="submit" class="center-button tablink" onclick="location.href='#invitations'">
+                        Invitations
+                    </button>
                 </div>
                 <div id="profile" class="tabcontent">
                     <form>
@@ -105,9 +106,39 @@
                         </div>
                     </form>
                 </div>
-                <div id="invitations" class="invitations tabcontent" style="display: none;">
+                <div id="invitations" class="invitations tabcontent">
                     <div class="invitations__invite">
                         <p class="invitations__project-name">asljdansfakljnsdfkljadsk;fdaslkflkadmsfklmasdlk</p>
+                        <button class="invitations__button invitations__button_accept"></button>
+                        <button class="invitations__button invitations__button_decline"></button>
+                    </div>
+                    <div class="invitations__invite">
+                        <p class="invitations__project-name">Invite</p>
+                        <button class="invitations__button invitations__button_accept"></button>
+                        <button class="invitations__button invitations__button_decline"></button>
+                    </div>
+                    <div class="invitations__invite">
+                        <p class="invitations__project-name">Invite</p>
+                        <button class="invitations__button invitations__button_accept"></button>
+                        <button class="invitations__button invitations__button_decline"></button>
+                    </div>
+                    <div class="invitations__invite">
+                        <p class="invitations__project-name">Invite</p>
+                        <button class="invitations__button invitations__button_accept"></button>
+                        <button class="invitations__button invitations__button_decline"></button>
+                    </div>
+                    <div class="invitations__invite">
+                        <p class="invitations__project-name">Invite</p>
+                        <button class="invitations__button invitations__button_accept"></button>
+                        <button class="invitations__button invitations__button_decline"></button>
+                    </div>
+                    <div class="invitations__invite">
+                        <p class="invitations__project-name">Invite</p>
+                        <button class="invitations__button invitations__button_accept"></button>
+                        <button class="invitations__button invitations__button_decline"></button>
+                    </div>
+                    <div class="invitations__invite">
+                        <p class="invitations__project-name">Invite</p>
                         <button class="invitations__button invitations__button_accept"></button>
                         <button class="invitations__button invitations__button_decline"></button>
                     </div>

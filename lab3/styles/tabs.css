@@ -12,6 +12,14 @@
     color: white;
 }
 
-.tab-buttons-containter button.active {
+.tab-buttons-containter button:hover {
     background-color: #3131317f;
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tabcontent:target {
+    display: block;
 }
