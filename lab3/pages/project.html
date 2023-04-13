@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <div class="navbar">
+        <nav class="navbar">
             <span class="navbar__item menu-image" onclick="toggleNav()">
                 <div class="menu-line"></div>
                 <div class="menu-line"></div>
@@ -37,10 +37,8 @@
                     <a href="./login.html">Log out</a>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div id="side-nav" class="sidenav">
+        </nav>
+        <aside id="side-nav" class="sidenav">
             <h2>Projects</h2>
             <div style="background-color: white; height: 2px; width: 100%;"></div>
             <div class="project-container">
@@ -60,8 +58,10 @@
                     +
                 </a>
             </div>
-        </div>
-        <div class="task-view">
+        </aside>
+    </header>
+    <main>
+        <section class="task-view">
             <div class="task-view__container">
                 <div class="task-view__type task-view__type_to-do">
                     <h1>To do</h1>
@@ -88,8 +88,8 @@
                     <h1>Completed</h1>
                 </div>
             </div>
-        </div>
-        <div class="project-members">
+        </section>
+        <section class="project-members">
             <div class="project-members__member">
                 <img class="user-image" src="../images/IMG_2735.JPG" />
                 <p>User</p>
@@ -105,7 +105,7 @@
             <button class="round-button plus" onclick="location.href='#openModal'">
                 <p>+</p>
             </button>
-        </div>
+        </section>
         <div id="openModal" class="modal">
             <div class="modal__dialog">
                 <div class="modal__content">
