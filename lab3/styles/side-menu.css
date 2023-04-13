@@ -28,7 +28,7 @@
 }
 
 
-.project {
+.project-container__project {
     background-color: white;
     color: black;
     width: 80%;
@@ -36,7 +36,7 @@
     border-radius: 40px;
 }
 
-.project p {
+.project-container__project p {
     margin: 0.3rem 0;
     word-wrap: break-word;
     display: -webkit-box;
@@ -45,7 +45,7 @@
     overflow: hidden;
 }
 
-.current {
+.project-container__project_current {
     border: 0.2rem solid rgba(146, 92, 255, 0.482);
 }
 

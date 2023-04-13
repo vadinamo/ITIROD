@@ -1,0 +1,12 @@
+.modal__dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+@media (min-width: 576px) {
+    .modal__dialog {
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+}

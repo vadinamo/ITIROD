@@ -1,4 +1,4 @@
-.project-members-view {
+.project-members {
     float: right;
     height: calc(100vh - 3.5rem);
     background-color: rgb(46, 46, 46, 0.8);
@@ -7,26 +7,26 @@
 }
 
 @media screen and (max-width: 900px) {
-    .project-members-view {
+    .project-members {
         width: 15vw;
     }
 }
 
 @media screen and (min-width: 900px) {
-    .project-members-view {
+    .project-members {
         width: 5vw;
     }
 }
 
-.member {
+.project-members__member {
     margin-top: 10px;
     color: white;
 }
 
-.member:hover {
+.project-members__member:hover {
     color: rgb(210, 210, 210);
 }
 
-.member p {
+.project-members__member p {
     margin-top: 0;
 }
