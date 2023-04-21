@@ -81,6 +81,7 @@ body {
 
 .fade-button {
     text-align: center;
+    text-decoration: none;
     margin: 2rem 0;
     background: linear-gradient(to right, #8A2BE2, #00CED1);
     color: white;

@@ -1,0 +1,19 @@
+@import url(./__item/navbar__item.css);
+
+.navbar {
+    background-color: rgb(33, 33, 33);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.menu-line {
+    width: 25px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: calc(3rem/16) 0;
+}
+
+.menu-image:hover>.menu-line {
+    background-color: rgb(210, 210, 210);
+}

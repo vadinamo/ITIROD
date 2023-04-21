@@ -3,10 +3,15 @@
 @import url(./_to-do/task-view__type_to-do.css);
 
 .task-view__type {
-    height: 8%;
+    position: sticky;
+    top: 0;
     width: 100%;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.task-view__type h1 {
+    margin: 0.8rem 0;
 }

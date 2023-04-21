@@ -1,0 +1,10 @@
+@import url(./__btn/dropdown__btn.css);
+@import url(./__content/dropdown__content.css);
+
+.dropdown {
+    margin-left: auto;
+}
+
+.dropdown:hover .dropdown__content {
+    display: grid;
+}

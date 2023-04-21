@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/nav.css">
-    <link rel="stylesheet" href="../styles/side-menu.css">
-    <link rel="stylesheet" href="../styles/input-group/input-group.css">
-    <link rel="stylesheet" href="../styles/profile-group/profile-group.css">
-    <link rel="stylesheet" href="../styles/tabs.css">
-    <link rel="stylesheet" href="../styles/invitations/invitations.css">
-    <script src="../scripts/side-menu.js"></script>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/dropdown/dropdown.css">
+    <link rel="stylesheet" href="./styles/navbar/navbar.css">
+    <link rel="stylesheet" href="./styles/side-menu.css">
+    <link rel="stylesheet" href="./styles/input-group/input-group.css">
+    <link rel="stylesheet" href="./styles/profile-group/profile-group.css">
+    <link rel="stylesheet" href="./styles/tabs.css">
+    <link rel="stylesheet" href="./styles/invitations/invitations.css">
+    <script src="./scripts/side-menu.js"></script>
 </head>
 
 <body>
@@ -25,11 +26,11 @@
                 <div class="menu-line"></div>
             </span>
 
-            <h2 class="navbar__item" style="margin: 0; font-size: 1.5rem;">Treplo</h2>
+            <h2 class="navbar__item" style="margin: 0; font-size: 1.5rem;">Trello</h2>
             <div class="dropdown">
                 <span class="dropdown__btn">Krupa</span>
                 <div class="dropdown__content" id="dropdown-content">
-                    <img src="../images/IMG_2735.JPG" />
+                    <img src="./images/IMG_2735.JPG" />
                     <p>User</p>
                     <p>user@gmail.com</p>
                     <div style="background-color: rgb(113, 113, 113); height: 2px; width: 100%"></div>
@@ -43,16 +44,16 @@
             <div style="background-color: white; height: 2px; width: 100%;"></div>
             <div class="project-container">
                 <a class="project-container__project" href="./project.html">
-                    <p>jopa</p>
+                    <p>project</p>
                 </a>
                 <a class="project-container__project" href="./project.html">
-                    <p>jopaasdklsamdlkafklslkmflksadlkmgsamkfs
+                    <p>asdklsamdlkafklslkmflksadlkmgsamkfs
                         sadfkmldsafkladsmfadslkfasd
                         fasdfkmdaslkfmadslfmasdf
                     </p>
                 </a>
                 <a class="project-container__project" href="./project.html">
-                    <p>jopa</p>
+                    <p>project</p>
                 </a>
                 <button class="round-button plus">
                     <p>+</p>
@@ -75,7 +76,7 @@
                 <form>
                     <div class="profile-group">
                         <div class="profile-group__left">
-                            <img class="profile-group__avatar" src="../images/IMG_2735.JPG">
+                            <img class="profile-group__avatar" src="./images/IMG_2735.JPG">
                             <button type="button" class="fade-button center-button"
                                 onclick="document.getElementById('avatar').click()">Upload</button>
                             <input id="avatar" type="file" hidden />
@@ -84,19 +85,19 @@
                             <div class="input-group">
                                 <label for="username" class="input-group__label">Username</label>
                                 <input id="username" class="input-group__input"
-                                    style="background-image: url('../images/defaults/user-icon.png');" type="text"
+                                    style="background-image: url('./images/defaults/user-icon.png');" type="text"
                                     placeholder="Type your username" value="User" />
                                 <label for="email" class="input-group__label">Email</label>
                                 <input id="email" class="input-group__input"
-                                    style="background-image: url('../images/defaults/mail-icon.png');" type="text"
+                                    style="background-image: url('./images/defaults/mail-icon.png');" type="text"
                                     placeholder="Type your email" value="user@gmail.com" />
                                 <label for="password" class="input-group__label">Password</label>
                                 <input id="password" class="input-group__input"
-                                    style="background-image: url('../images/defaults/lock-icon.png');" type="password"
+                                    style="background-image: url('./images/defaults/lock-icon.png');" type="password"
                                     placeholder="Type your password" />
                                 <label for="repeat-password" class="input-group__label">Repeat password</label>
                                 <input id="repeat-password" class="input-group__input"
-                                    style="background-image: url('../images/defaults/lock-icon.png'); margin-bottom: 0"
+                                    style="background-image: url('./images/defaults/lock-icon.png'); margin-bottom: 0"
                                     type="password" placeholder="Repeat your password" />
                                 <button type="submit" class="fade-button center-button">Save</button>
                             </div>

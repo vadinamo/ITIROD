@@ -5,14 +5,13 @@
 @import url(./__type/task-view__type.css);
 
 .task-view {
-    width: 95vw;
+    width: calc(100% - 1rem - 40px);
     float: left;
     display: flex;
 }
 
 @media screen and (max-width: 900px) {
     .task-view {
-        width: 85vw;
         overflow-x: scroll
     }
 }

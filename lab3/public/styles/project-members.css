@@ -1,21 +1,10 @@
 .project-members {
     float: right;
-    height: calc(100vh - 3.5rem);
+    height: calc(100vh - 4.5rem);
     background-color: rgb(46, 46, 46, 0.8);
     text-align: center;
     overflow-y: scroll;
-}
-
-@media screen and (max-width: 900px) {
-    .project-members {
-        width: 15vw;
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .project-members {
-        width: 5vw;
-    }
+    padding: 0.5rem;
 }
 
 .project-members__member {
