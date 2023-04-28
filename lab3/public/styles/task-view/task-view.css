@@ -12,6 +12,8 @@
 
 @media screen and (max-width: 900px) {
     .task-view {
-        overflow-x: scroll;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: calc(100vh - 3.5rem);
     }
 }
