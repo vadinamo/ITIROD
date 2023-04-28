@@ -63,7 +63,7 @@
     </header>
     <main>
         <section class="task-view">
-            <div class="task-view__container">
+            <div class="task-view__container hide" id="to-do" active>
                 <div class="task-view__type task-view__type_to-do">
                     <h1>To do</h1>
                 </div>
@@ -137,7 +137,7 @@
                     <p>+</p>
                 </button>
             </div>
-            <div class="task-view__container" style="background-color: rgb(122, 122, 122, 0.5);">
+            <div class="task-view__container" id="in-progress" style="background-color: rgb(122, 122, 122, 0.3);">
                 <div class="task-view__type task-view__type_in-progress">
                     <h1>In progress</h1>
                 </div>
@@ -211,7 +211,7 @@
                     <p>+</p>
                 </button>
             </div>
-            <div class="task-view__container">
+            <div class="task-view__container" id="complete">
                 <div class="task-view__type task-view__type_complete">
                     <h1>Completed</h1>
                 </div>

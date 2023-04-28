@@ -8,6 +8,8 @@
     width: calc(100% - 1rem - 40px);
     float: left;
     display: flex;
+    background-color: rgb(129, 129, 129, 0.5);
+    height: calc(100vh - 3.5rem);
 }
 
 @media screen and (max-width: 900px) {
