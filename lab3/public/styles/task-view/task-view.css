@@ -12,6 +12,6 @@
 
 @media screen and (max-width: 900px) {
     .task-view {
-        overflow-x: scroll
+        overflow-x: scroll;
     }
 }
