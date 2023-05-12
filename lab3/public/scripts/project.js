@@ -43,25 +43,25 @@ function updateTasks(taskType) {
         taskContainer.innerHTML = ''
         project.tasks[taskType].forEach(task => {
             let section = document.createElement('section')
-            section.classList.add('task-view__card');
+            section.classList.add('task-view__card')
 
-            const content = document.createElement('div');
-            content.classList.add('task-view__card-content');
-            section.appendChild(content);
+            const content = document.createElement('div')
+            content.classList.add('task-view__card-content')
+            section.appendChild(content)
 
-            const heading = document.createElement('h2');
-            heading.classList.add('task-view__card-text');
-            heading.textContent = task;
-            content.appendChild(heading);
+            const heading = document.createElement('h2')
+            heading.classList.add('task-view__card-text')
+            heading.textContent = task
+            content.appendChild(heading)
 
-            const image = document.createElement('img');
-            image.classList.add('user-image');
-            image.src = './images/IMG_2735.JPG';
-            content.appendChild(image);
+            const image = document.createElement('img')
+            image.classList.add('user-image')
+            image.src = './images/IMG_2735.JPG'
+            content.appendChild(image)
 
-            const button = document.createElement('button');
-            button.classList.add('round-button');
-            section.appendChild(button);
+            const button = document.createElement('button')
+            button.classList.add('round-button')
+            section.appendChild(button)
 
             taskContainer.appendChild(section)
         })
