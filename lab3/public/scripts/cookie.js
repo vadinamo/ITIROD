@@ -13,4 +13,13 @@ function checkAuth() {
     return false
 }
 
-export { createCookie, checkAuth }
+function getUserId() {
+    if (checkAuth()) {
+        return document.cookie
+            .split('; ')
+            .find(row => row.startsWith('user='))
+            .split('=')[1];
+    }
+}
+
+export { createCookie, checkAuth, getUserId }
