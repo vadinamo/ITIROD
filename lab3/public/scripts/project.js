@@ -23,7 +23,7 @@ function addTask(taskType) {
             project.tasks[taskType] = []
         }
 
-        project.tasks[taskType].push('New task')
+        project.tasks[taskType].push({ 'text': 'New task', 'user': getUserId() })
 
         update(projectRef, project).then(updateTasks(taskType))
             .catch((error) => {
@@ -53,12 +53,14 @@ function updateTasks(taskType) {
 
             const heading = document.createElement('h2')
             heading.classList.add('task-view__card-text')
-            heading.textContent = task
+            heading.textContent = task.text
             content.appendChild(heading)
 
             const image = document.createElement('img')
             image.classList.add('user-image')
-            image.src = './images/IMG_2735.JPG'
+            getUserImage(getUserId()).then((url) => {
+                image.src = url
+            })
             content.appendChild(image)
 
             const button = document.createElement('button')

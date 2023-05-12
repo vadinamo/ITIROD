@@ -19,7 +19,7 @@ function getUserImage(uid) {
         return url;
     }).catch((error) => {
         console.error(error);
-        throw error;
+        return './images/avatar.png'
     });
 }
 
