@@ -1,6 +1,6 @@
-import { ref as dbRef, update } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+import { ref as dbRef, update, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { ref as stRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-storage.js"
-import { storage } from './api/config.js'
+import { database, storage } from './api/config.js'
 
 function uploadImageAndGetLink(storage, database, uid, image) {
     const storageRef = stRef(storage, `images/users/${uid}/`);
@@ -23,4 +23,14 @@ function getUserImage(uid) {
     });
 }
 
-export { uploadImageAndGetLink, getUserImage }
+function getUsername(uid) {
+    const databaseRef = dbRef(database, `users/${uid}`);
+    return get(databaseRef).then((user) => {
+        return user.val().username;
+    }).catch((error) => {
+        console.log(error);
+        return 'undefined';
+    });
+}
+
+export { uploadImageAndGetLink, getUserImage, getUsername }

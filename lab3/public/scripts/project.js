@@ -1,7 +1,7 @@
 import { database } from './api/config.js'
 import { update, ref, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { getUserId } from './cookie.js'
-import { getUserImage } from './requests.js'
+import { getUserImage, getUsername } from './requests.js'
 
 const projectId = new URLSearchParams(window.location.search).get('id')
 const projectRef = ref(database, `projects/${projectId}`)
@@ -65,6 +65,10 @@ function updateTasks(taskType) {
 
             const button = document.createElement('button')
             button.classList.add('round-button')
+
+            const buttonImage = document.createElement('img')
+            buttonImage.src = './images/defaults/comment.png'
+            button.appendChild(buttonImage)
             section.appendChild(button)
 
             taskContainer.appendChild(section)
@@ -74,9 +78,41 @@ function updateTasks(taskType) {
     });
 }
 
+function getProjectUsers() {
+    get(projectRef).then((snapshot) => {
+        const project = snapshot.val()
+
+        const projectMembers = document.getElementById('project-members')
+        project.users.forEach((uid) => {
+            const member = document.createElement('div')
+            member.classList.add('project-members__member')
+            
+            const image = document.createElement('img')
+            image.classList.add('user-image')
+            getUserImage(uid).then((url) => {
+                image.src = url
+            })
+            member.appendChild(image)
+
+            const name = document.createElement('p')
+            getUsername(uid).then((username) => {
+                name.textContent = username
+            })
+            name.textContent = 'username'
+            member.appendChild(name)
+
+            projectMembers.appendChild(member)
+        })
+    }).catch((error) => {
+        console.error(error.message)
+    });
+}
+
 updateTasks('to-do')
 updateTasks('in-progress')
 updateTasks('complete')
+
+getProjectUsers()
 
 getUserImage(getUserId()).then((url) => {
     document.getElementById('profile-image').src = url
