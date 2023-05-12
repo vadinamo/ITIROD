@@ -63,38 +63,42 @@
     </header>
     <main>
         <section class="task-view">
-            <div class="task-view__container hide" id="to-do" active>
+            <div class="task-view__container" active>
                 <div class="task-view__type task-view__type_to-do">
                     <h1>To do</h1>
                 </div>
-                <section class="task-view__card">
-                    <div class="task-view__card-content">
-                        <h2 class="task-view__card-text">
-                            Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1
-                        </h2>
-                        <img class="user-image" src="./images/IMG_2735.JPG" />
-                    </div>
-                    <button class="round-button">
-                        <img src="./images/defaults/comment.png">
-                    </button>
-                </section>
-                <button class="round-button plus">
+                <div id="to-do">
+                    <section class="task-view__card">
+                        <div class="task-view__card-content">
+                            <h2 class="task-view__card-text">
+                                Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1Task1
+                            </h2>
+                            <img class="user-image" src="./images/IMG_2735.JPG" />
+                        </div>
+                        <button class="round-button">
+                            <img src="./images/defaults/comment.png">
+                        </button>
+                    </section>
+                </div>
+                <button class="round-button plus" id="add-to-do">
                     <p>+</p>
                 </button>
             </div>
-            <div class="task-view__container" id="in-progress" style="background-color: rgb(122, 122, 122, 0.3);">
+            <div class="task-view__container"style="background-color: rgb(122, 122, 122, 0.3);">
                 <div class="task-view__type task-view__type_in-progress">
                     <h1>In progress</h1>
                 </div>
-                <button class="round-button plus">
+                <div id="in-progress"></div>
+                <button class="round-button plus" id="add-in-progress">
                     <p>+</p>
                 </button>
             </div>
-            <div class="task-view__container" id="complete">
+            <div class="task-view__container">
                 <div class="task-view__type task-view__type_complete">
                     <h1>Completed</h1>
                 </div>
-                <button class="round-button plus">
+                <div id="complete"></div>
+                <button class="round-button plus" id="add-complete">
                     <p>+</p>
                 </button>
             </div>

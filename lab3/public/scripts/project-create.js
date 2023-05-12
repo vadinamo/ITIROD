@@ -10,7 +10,8 @@ submitData.addEventListener('click', (e) => {
     set(ref(database, 'projects/' + project_id), {
         name: name,
         description: description,
-        users: [getUserId()]
+        users: [getUserId()],
+        tasks: {"to-do": [], "in-progress": [], "complete": []}
     })
         .then(() => {
             window.location.replace(`project.html?id=${project_id}`);
