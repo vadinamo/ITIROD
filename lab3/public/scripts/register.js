@@ -17,6 +17,7 @@ submitData.addEventListener('click', (e) => {
             })
                 .then(() => {
                     createCookie(user.uid)
+                    window.location.replace("index.html")
                 })
                 .catch((error) => {
                     alert(error.message);

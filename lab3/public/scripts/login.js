@@ -8,8 +8,8 @@ submitData.addEventListener('click', (e) => {
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const user = userCredential.user;
-            createCookie(user.uid)
+            createCookie(userCredential.user.uid)
+            window.location.replace("index.html");
         })
         .catch((error) => {
             alert(error.message)
