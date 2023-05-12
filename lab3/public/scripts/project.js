@@ -1,5 +1,7 @@
 import { database } from './api/config.js'
 import { update, ref, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+import { getUserId } from './cookie.js'
+import { getUserImage } from './requests.js'
 
 const projectId = new URLSearchParams(window.location.search).get('id')
 const projectRef = ref(database, `projects/${projectId}`)
@@ -24,9 +26,9 @@ function addTask(taskType) {
         project.tasks[taskType].push('New task')
 
         update(projectRef, project).then(updateTasks(taskType))
-        .catch((error) => {
-            alert(error.message)
-        });
+            .catch((error) => {
+                alert(error.message)
+            });
     }).catch((error) => {
         alert(error.message)
     });
@@ -73,3 +75,9 @@ function updateTasks(taskType) {
 updateTasks('to-do')
 updateTasks('in-progress')
 updateTasks('complete')
+
+getUserImage(getUserId()).then((url) => {
+    document.getElementById('profile-image').src = url
+}).catch((error) => {
+    console.log(error.message)
+})

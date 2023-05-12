@@ -1,8 +1,8 @@
 import { auth, database, storage } from './api/config.js'
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
-import { set, ref as dbRef, update } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-import { ref as stRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-storage.js"
+import { set, ref as dbRef } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { createCookie } from './cookie.js'
+import { uploadImageAndGetLink } from './requests.js'
 
 submitData.addEventListener('click', (e) => {
     let username = document.getElementById('username').value
@@ -29,15 +29,14 @@ submitData.addEventListener('click', (e) => {
             })
                 .then(() => {
                     if (image) {
-                        const storageRef = stRef(storage, `images/users/${user.uid}/`);
-                        uploadBytes(storageRef, image).then((snapshot) => {
-                            getDownloadURL(snapshot.ref).then((link) => {
-                                update(dbRef(database, `users/${user.uid}`), { 'avatar': link }).then(() => {
-                                    createCookie(user.uid);
-                                    window.location.replace("index.html");
-                                });
+                        uploadImageAndGetLink(storage, database, user.uid, image)
+                            .then(() => {
+                                createCookie(user.uid);
+                                window.location.replace("index.html");
                             })
-                        });
+                            .catch((error) => {
+                                console.error(error.message);
+                            });
                     }
                     else {
                         createCookie(user.uid)
