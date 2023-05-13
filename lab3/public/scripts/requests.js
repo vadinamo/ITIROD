@@ -33,4 +33,14 @@ function getUsername(uid) {
     });
 }
 
-export { uploadImageAndGetLink, getUserImage, getUsername }
+function getEmail(uid) {
+    const databaseRef = dbRef(database, `users/${uid}`);
+    return get(databaseRef).then((user) => {
+        return user.val().email;
+    }).catch((error) => {
+        console.log(error);
+        return 'undefined';
+    });
+}
+
+export { uploadImageAndGetLink, getUserImage, getUsername, getEmail }

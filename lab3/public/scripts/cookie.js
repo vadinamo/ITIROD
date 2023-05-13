@@ -1,6 +1,5 @@
 function createCookie(uid) {
     document.cookie = `user=${uid};`
-    console.log(document.cookie)
 }
 
 function checkAuth() {
@@ -13,6 +12,11 @@ function checkAuth() {
     return false
 }
 
+function logOut() {
+    document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.replace("login.html");
+}
+
 function getUserId() {
     if (checkAuth()) {
         return document.cookie
@@ -22,4 +26,4 @@ function getUserId() {
     }
 }
 
-export { createCookie, checkAuth, getUserId }
+export { createCookie, checkAuth, getUserId, logOut }

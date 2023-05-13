@@ -28,14 +28,14 @@
 
             <h2 class="navbar__item" style="margin: 0; font-size: 1.5rem;">Trello</h2>
             <div class="dropdown">
-                <span class="dropdown__btn">Krupa</span>
+                <span class="dropdown__btn" id="dropdownUsername">Krupa</span>
                 <div class="dropdown__content" id="dropdown-content">
-                    <img src="./images/avatar.png" id="profile-image"/>
-                    <p>User</p>
-                    <p>user@gmail.com</p>
+                    <img id="dropdownContentImage" />
+                    <p id="dropdownContentUsername"></p>
+                    <p id="dropdownContentEmail"></p>
                     <div style="background-color: rgb(113, 113, 113); height: 2px; width: 100%"></div>
-                    <a href="./profile.html">Profile</a>
-                    <a href="./login.html">Log out</a>
+                    <a href="./profile.html#profile">Profile</a>
+                    <a href="#" id="logOut">Log out</a>
                 </div>
             </div>
         </nav>
@@ -55,7 +55,7 @@
                 <a class="project-container__project" href="./project.html">
                     <p>project</p>
                 </a>
-                <a class="round-button plus" href="./project-create.html">
+                <a class="round-button plus" id="createProject" href="./project-create.html">
                     +
                 </a>
             </div>
@@ -72,7 +72,7 @@
                     <p>+</p>
                 </button>
             </div>
-            <div class="task-view__container"style="background-color: rgb(122, 122, 122, 0.3);">
+            <div class="task-view__container" style="background-color: rgb(122, 122, 122, 0.3);">
                 <div class="task-view__type task-view__type_in-progress">
                     <h1>In progress</h1>
                 </div>
@@ -93,7 +93,7 @@
         </section>
         <section class="project-members">
             <div id="project-members"></div>
-            <button class="round-button plus" onclick="location.href='#openModal'">
+            <button class="round-button plus" id='inviteMember' onclick="location.href='#openModal'">
                 <p>+</p>
             </button>
         </section>

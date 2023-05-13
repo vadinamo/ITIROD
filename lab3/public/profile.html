@@ -28,14 +28,14 @@
 
             <h2 class="navbar__item" style="margin: 0; font-size: 1.5rem;">Trello</h2>
             <div class="dropdown">
-                <span class="dropdown__btn">Krupa</span>
+                <span class="dropdown__btn" id="dropdownUsername">Krupa</span>
                 <div class="dropdown__content" id="dropdown-content">
-                    <img src="./images/avatar.png" />
-                    <p>User</p>
-                    <p>user@gmail.com</p>
+                    <img id="dropdownContentImage" />
+                    <p id="dropdownContentUsername"></p>
+                    <p id="dropdownContentEmail"></p>
                     <div style="background-color: rgb(113, 113, 113); height: 2px; width: 100%"></div>
                     <a href="./profile.html#profile">Profile</a>
-                    <a href="./login.html">Log out</a>
+                    <a href="#" id="logOut">Log out</a>
                 </div>
             </div>
         </nav>
@@ -76,7 +76,7 @@
                 <form>
                     <div class="profile-group">
                         <div class="profile-group__left">
-                            <img class="profile-group__avatar" src="./images/avatar.png">
+                            <img class="profile-group__avatar" id="avatar" >
                             <button type="button" class="fade-button center-button"
                                 onclick="document.getElementById('avatar').click()">Upload</button>
                             <input id="avatar" type="file" hidden />
@@ -86,11 +86,11 @@
                                 <label for="username" class="input-group__label">Username</label>
                                 <input id="username" class="input-group__input"
                                     style="background-image: url('./images/defaults/user-icon.png');" type="text"
-                                    placeholder="Type your username" value="User" />
+                                    placeholder="Type your username" />
                                 <label for="email" class="input-group__label">Email</label>
                                 <input id="email" class="input-group__input"
                                     style="background-image: url('./images/defaults/mail-icon.png');" type="text"
-                                    placeholder="Type your email" value="user@gmail.com" />
+                                    placeholder="Type your email" />
                                 <label for="password" class="input-group__label">Password</label>
                                 <input id="password" class="input-group__input"
                                     style="background-image: url('./images/defaults/lock-icon.png');" type="password"
@@ -111,64 +111,11 @@
                     <button class="invitations__button invitations__button_accept"></button>
                     <button class="invitations__button invitations__button_decline"></button>
                 </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
-                <div class="invitations__invite">
-                    <p class="invitations__project-name">Invite</p>
-                    <button class="invitations__button invitations__button_accept"></button>
-                    <button class="invitations__button invitations__button_decline"></button>
-                </div>
             </div>
         </div>
     </main>
+
+    <script type="module" src="./scripts/profile.js"></script>
 </body>
 
 </html>

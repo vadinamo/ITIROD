@@ -1,16 +1,21 @@
 import { database } from './api/config.js'
 import { update, ref, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-import { getUserId } from './cookie.js'
-import { getUserImage, getUsername } from './requests.js'
+import { getUserId, logOut } from './cookie.js'
+import { getEmail, getUserImage, getUsername } from './requests.js'
+import { setEmail, setUsername, setImage } from './user.js';
 
 const projectId = new URLSearchParams(window.location.search).get('id')
 const projectRef = ref(database, `projects/${projectId}`)
 
 document.querySelectorAll('.round-button').forEach(button => {
-    button.addEventListener('click', () => {
-        addTask(button.id)
-    });
+    if (!button.matches('#inviteMember, #createProject')) {
+        button.addEventListener('click', () => {
+            addTask(button.id)
+        });
+    }
 });
+
+document.getElementById('logOut').addEventListener("click", logOut)
 
 function addTask(taskType) {
     taskType = taskType.replace("add-", "")
@@ -43,9 +48,10 @@ function updateTasks(taskType) {
 
         const taskContainer = document.getElementById(taskType)
         taskContainer.innerHTML = ''
-        project.tasks[taskType].forEach(task => {
+        project.tasks[taskType].forEach((task, index) => {
             let section = document.createElement('section')
             section.classList.add('task-view__card')
+            section.id = `${taskType}-${index}`
 
             const content = document.createElement('div')
             content.classList.add('task-view__card-content')
@@ -86,7 +92,7 @@ function getProjectUsers() {
         project.users.forEach((uid) => {
             const member = document.createElement('div')
             member.classList.add('project-members__member')
-            
+
             const image = document.createElement('img')
             image.classList.add('user-image')
             getUserImage(uid).then((url) => {
@@ -112,10 +118,8 @@ updateTasks('to-do')
 updateTasks('in-progress')
 updateTasks('complete')
 
-getProjectUsers()
+setEmail()
+setUsername()
+setImage()
 
-getUserImage(getUserId()).then((url) => {
-    document.getElementById('profile-image').src = url
-}).catch((error) => {
-    console.log(error.message)
-})
+getProjectUsers()
