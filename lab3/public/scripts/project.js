@@ -7,6 +7,12 @@ import { setEmail, setUsername, setImage, getUserProjects } from './user.js';
 const currentProjectId = new URLSearchParams(window.location.search).get('id')
 const projectRef = ref(database, `projects/${currentProjectId}`)
 
+const containers = [document.getElementById('to-do'),
+document.getElementById('in-progress'),
+document.getElementById('complete')]
+
+let draggables = []
+
 document.querySelectorAll('.round-button').forEach(button => {
     if (!button.matches('#inviteMember, #createProject')) {
         button.addEventListener('click', () => {
@@ -52,6 +58,7 @@ function updateTasks(taskType) {
         project.tasks[taskType].forEach((task, index) => {
             let section = document.createElement('section')
             section.classList.add('task-view__card')
+            section.classList.add('draggable')
             section.id = `${taskType}-${index}`
 
             const content = document.createElement('div')
@@ -77,7 +84,16 @@ function updateTasks(taskType) {
             buttonImage.src = './images/defaults/comment.png'
             button.appendChild(buttonImage)
             section.appendChild(button)
+            
+            section.draggable = 'true'
+            section.addEventListener('dragstart', () => {
+                section.classList.add('dragging')
+            })
 
+            section.addEventListener('dragend', () => {
+                section.classList.remove('dragging')
+            })
+            draggables.push(section)
             taskContainer.appendChild(section)
         })
     }).catch((error) => {
@@ -128,6 +144,34 @@ function sentInvitation() {
         .catch((error) => {
             alert(error.message);
         });
+}
+
+containers.forEach(container => {
+    container.addEventListener('dragover', e => {
+        e.preventDefault()
+        const afterElement = getDragAfterElement(container, e.clientY)
+        const draggable = document.querySelector('.dragging')
+        if (afterElement == null) {
+            container.appendChild(draggable)
+        } else {
+            container.insertBefore(draggable, afterElement)
+        }
+    })
+})
+
+function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
+    console.log(draggableElements)
+
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect()
+        const offset = y - box.top - box.height / 2
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child }
+        } else {
+            return closest
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element
 }
 
 updateTasks('to-do')

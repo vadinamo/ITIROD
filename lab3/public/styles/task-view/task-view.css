@@ -3,6 +3,7 @@
 @import url(./__card-text/task-view__card-text.css);
 @import url(./__container/task-view__container.css);
 @import url(./__type/task-view__type.css);
+@import url(./__card_container/task-view__card_container.css);
 
 .task-view {
     width: calc(100% - 1rem - 40px);
