@@ -1,5 +1,5 @@
 import { database } from './api/config.js'
-import { update, ref, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+import { update, ref, get, set, push } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { getUserId, logOut } from './cookie.js'
 import { getEmail, getUserImage, getUsername } from './requests.js'
 import { setEmail, setUsername, setImage, getUserProjects } from './user.js';
@@ -16,6 +16,7 @@ document.querySelectorAll('.round-button').forEach(button => {
 });
 
 document.getElementById('logOut').addEventListener("click", logOut)
+document.getElementById('sentInvitation').addEventListener('click', sentInvitation)
 
 function addTask(taskType) {
     taskType = taskType.replace("add-", "")
@@ -112,6 +113,21 @@ function getProjectUsers() {
     }).catch((error) => {
         console.error(error.message)
     });
+}
+
+function sentInvitation() {
+    const email = document.getElementById('inviteEmail').value
+    const invite = {
+        'email': email,
+        'project_id': currentProjectId
+    }
+    console.log(invite)
+
+    const inviteId = push(ref(database, 'invitations')).key
+    set(ref(database, 'invitations/' + inviteId), invite)
+        .catch((error) => {
+            alert(error.message);
+        });
 }
 
 updateTasks('to-do')

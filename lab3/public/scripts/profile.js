@@ -2,7 +2,7 @@ import { database, auth, storage } from './api/config.js'
 import { update, ref as dbRef, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { updateEmail, updatePassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 import { getUserId, logOut, checkAuth } from './cookie.js'
-import { getUserImage, uploadImageAndGetLink } from './requests.js';
+import { getEmail, getUserImage, uploadImageAndGetLink, getProjectName } from './requests.js';
 import { setEmail, setUsername, setImage, getUserProjects } from './user.js';
 
 if (!checkAuth()) {
@@ -73,9 +73,49 @@ function loadProfile() {
     })
 }
 
+function loadInvitations() {
+    getEmail(userId).then((email) => {
+        get(dbRef(database, 'invitations')).then((result) => {
+            const invitations = result.val()
+            const userInvitations = document.getElementById('invitations')
+            for (const key in invitations) {
+                if (invitations[key].email == email) {
+                    const div = document.createElement('div')
+                    div.classList.add('invitations__invite')
+
+                    const p = document.createElement('p')
+                    p.classList.add('invitations__project-name')
+                    getProjectName(invitations[key].project_id).then((projectName) => {
+                        p.innerText = projectName
+                    })
+                    div.appendChild(p)
+
+                    const accept = document.createElement('button')
+                    accept.classList.add('invitations__button')
+                    accept.classList.add('invitations__button_accept')
+                    div.appendChild(accept)
+
+                    const decline = document.createElement('button')
+                    decline.classList.add('invitations__button')
+                    decline.classList.add('invitations__button_decline')
+                    div.appendChild(decline)
+                    
+                    userInvitations.appendChild(div)
+                }
+            }
+        }).catch((error) => {
+            console.error(error.message)
+        })
+    })
+        .catch((error) => {
+            console.error(error.message)
+        })
+}
+
 setEmail()
 setUsername()
 setImage()
 
 loadProfile()
 getUserProjects()
+loadInvitations()

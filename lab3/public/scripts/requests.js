@@ -42,6 +42,16 @@ function getEmail(uid) {
     });
 }
 
+function getProjectName(uid) {
+    const databaseRef = dbRef(database, `projects/${uid}`);
+    return get(databaseRef).then((user) => {
+        return user.val().name;
+    }).catch((error) => {
+        console.log(error);
+        return 'undefined';
+    });
+}
+
 function getProjects() {
     let projectsData = {};
     const userId = getUserId();
@@ -59,4 +69,4 @@ function getProjects() {
     });
 }
 
-export { uploadImageAndGetLink, getUserImage, getUsername, getEmail, getProjects }
+export { uploadImageAndGetLink, getUserImage, getUsername, getEmail, getProjects, getProjectName }
