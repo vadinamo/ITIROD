@@ -1,5 +1,5 @@
 import { database, auth, storage } from './api/config.js'
-import { update, ref as dbRef, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+import { update, ref as dbRef, get, remove } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { updateEmail, updatePassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 import { getUserId, logOut, checkAuth } from './cookie.js'
 import { getEmail, getUserImage, uploadImageAndGetLink, getProjectName } from './requests.js';
@@ -13,6 +13,7 @@ const userId = getUserId()
 const userRef = dbRef(database, `users/${userId}`)
 
 document.getElementById('logOut').addEventListener("click", logOut)
+
 
 submitData.addEventListener('click', (e) => {
     let username = document.getElementById('username').value
@@ -78,10 +79,12 @@ function loadInvitations() {
         get(dbRef(database, 'invitations')).then((result) => {
             const invitations = result.val()
             const userInvitations = document.getElementById('invitations')
+            userInvitations.innerHTML = ''
             for (const key in invitations) {
                 if (invitations[key].email == email) {
                     const div = document.createElement('div')
                     div.classList.add('invitations__invite')
+                    div.id = `invite${key}`
 
                     const p = document.createElement('p')
                     p.classList.add('invitations__project-name')
@@ -90,16 +93,18 @@ function loadInvitations() {
                     })
                     div.appendChild(p)
 
-                    const accept = document.createElement('button')
-                    accept.classList.add('invitations__button')
-                    accept.classList.add('invitations__button_accept')
-                    div.appendChild(accept)
+                    const acceptBtn = document.createElement('button')
+                    acceptBtn.classList.add('invitations__button')
+                    acceptBtn.classList.add('invitations__button_accept')
+                    acceptBtn.addEventListener('click', () => accept(key));
+                    div.appendChild(acceptBtn)
 
-                    const decline = document.createElement('button')
-                    decline.classList.add('invitations__button')
-                    decline.classList.add('invitations__button_decline')
-                    div.appendChild(decline)
-                    
+                    const declineBtn = document.createElement('button')
+                    declineBtn.classList.add('invitations__button')
+                    declineBtn.classList.add('invitations__button_decline')
+                    declineBtn.addEventListener('click', () => decline(key));
+                    div.appendChild(declineBtn)
+
                     userInvitations.appendChild(div)
                 }
             }
@@ -110,6 +115,46 @@ function loadInvitations() {
         .catch((error) => {
             console.error(error.message)
         })
+}
+
+function removeInvitation(id) {
+    remove(dbRef(database, `invitations/${id}`))
+        .then(() => {
+            loadInvitations()
+        })
+}
+
+function accept(id) {
+    get(dbRef(database, `invitations/${id}`)).then((invitation) => {
+        const projectId = invitation.val().project_id
+        const projectRef = dbRef(database, `projects/${projectId}`)
+
+        get(projectRef).then((snapshot) => {
+            const projectData = snapshot.val();
+
+            if (projectData.users.includes(userId)) {
+                console.log('already here')
+                return;
+            }
+
+            update(projectRef, {
+                users: [...projectData.users, userId],
+            })
+                .then(() => {
+                    getUserProjects()
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        });
+    })
+        .then(() => {
+            removeInvitation(id)
+        })
+}
+
+function decline(id) {
+    removeInvitation(id)
 }
 
 setEmail()

@@ -65,7 +65,7 @@ function updateTasks(taskType) {
 
             const image = document.createElement('img')
             image.classList.add('user-image')
-            getUserImage(getUserId()).then((url) => {
+            getUserImage(task.user).then((url) => {
                 image.src = url
             })
             content.appendChild(image)

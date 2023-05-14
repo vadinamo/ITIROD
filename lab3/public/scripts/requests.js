@@ -42,6 +42,22 @@ function getEmail(uid) {
     });
 }
 
+function getIdByEmail(email) {
+    const databaseRef = dbRef(database, `users/`);
+    return get(databaseRef).then((users) => {
+        console.log(users.var())
+        for (id in users.var()) {
+            if (users.var()[id].email == email) {
+                return id
+            }
+        }
+        return 'undefined'
+    }).catch((error) => {
+        console.log(error);
+        return 'undefined'
+    });
+}
+
 function getProjectName(uid) {
     const databaseRef = dbRef(database, `projects/${uid}`);
     return get(databaseRef).then((user) => {
@@ -69,4 +85,4 @@ function getProjects() {
     });
 }
 
-export { uploadImageAndGetLink, getUserImage, getUsername, getEmail, getProjects, getProjectName }
+export { uploadImageAndGetLink, getUserImage, getUsername, getEmail, getProjects, getProjectName, getIdByEmail }
