@@ -1,3 +1,6 @@
+import { signOut } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+import { auth } from "./api/config.js";
+
 function createCookie(uid) {
     document.cookie = `user=${uid};`
 }
@@ -13,8 +16,12 @@ function checkAuth() {
 }
 
 function logOut() {
-    document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    window.location.replace("login.html");
+    signOut(auth).then(() => {
+        document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        window.location.replace("login.html");
+    }).catch((error) => {
+        console.error(error.message)
+    })
 }
 
 function getUserId() {

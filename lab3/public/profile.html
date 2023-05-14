@@ -42,22 +42,7 @@
         <aside id="side-nav" class="sidenav">
             <h2>Projects</h2>
             <div style="background-color: white; height: 2px; width: 100%;"></div>
-            <div class="project-container">
-                <a class="project-container__project" href="./project.html">
-                    <p>project</p>
-                </a>
-                <a class="project-container__project" href="./project.html">
-                    <p>asdklsamdlkafklslkmflksadlkmgsamkfs
-                        sadfkmldsafkladsmfadslkfasd
-                        fasdfkmdaslkfmadslfmasdf
-                    </p>
-                </a>
-                <a class="project-container__project" href="./project.html">
-                    <p>project</p>
-                </a>
-                <button class="round-button plus">
-                    <p>+</p>
-                </button>
+            <div class="project-container" id="userProjects">
             </div>
         </aside>
     </header>
@@ -76,9 +61,8 @@
                 <form>
                     <div class="profile-group">
                         <div class="profile-group__left">
-                            <img class="profile-group__avatar" id="avatar" >
-                            <button type="button" class="fade-button center-button"
-                                onclick="document.getElementById('avatar').click()">Upload</button>
+                            <img class="profile-group__avatar" id="avatarImage">
+                            <label for="avatar" class="fade-button center-button">Upload avatar</label>
                             <input id="avatar" type="file" hidden />
                         </div>
                         <div class="profile-group__right">
@@ -99,7 +83,7 @@
                                 <input id="repeat-password" class="input-group__input"
                                     style="background-image: url('./images/defaults/lock-icon.png'); margin-bottom: 0"
                                     type="password" placeholder="Repeat your password" />
-                                <button type="submit" class="fade-button center-button">Save</button>
+                                <button class="fade-button center-button" id="submitData" type="button">Save</button>
                             </div>
                         </div>
                     </div>

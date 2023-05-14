@@ -2,10 +2,10 @@ import { database } from './api/config.js'
 import { update, ref, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { getUserId, logOut } from './cookie.js'
 import { getEmail, getUserImage, getUsername } from './requests.js'
-import { setEmail, setUsername, setImage } from './user.js';
+import { setEmail, setUsername, setImage, getUserProjects } from './user.js';
 
-const projectId = new URLSearchParams(window.location.search).get('id')
-const projectRef = ref(database, `projects/${projectId}`)
+const currentProjectId = new URLSearchParams(window.location.search).get('id')
+const projectRef = ref(database, `projects/${currentProjectId}`)
 
 document.querySelectorAll('.round-button').forEach(button => {
     if (!button.matches('#inviteMember, #createProject')) {
@@ -122,4 +122,5 @@ setEmail()
 setUsername()
 setImage()
 
+getUserProjects(currentProjectId)
 getProjectUsers()

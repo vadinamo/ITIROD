@@ -24,8 +24,7 @@ submitData.addEventListener('click', (e) => {
 
             set(dbRef(database, 'users/' + user.uid), {
                 username: username,
-                email: email,
-                password: password
+                email: email
             })
                 .then(() => {
                     if (image) {
