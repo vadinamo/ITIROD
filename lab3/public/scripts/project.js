@@ -1,7 +1,7 @@
 import { database } from './api/config.js'
 import { update, ref, get, set, push } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { getUserId, logOut } from './cookie.js'
-import { getEmail, getUserImage, getUsername } from './requests.js'
+import { getUserImage, getUsername } from './requests.js'
 import { setEmail, setUsername, setImage, getUserProjects } from './user.js';
 
 const currentProjectId = new URLSearchParams(window.location.search).get('id')
@@ -12,6 +12,8 @@ document.getElementById('in-progress'),
 document.getElementById('complete')]
 
 let draggables = []
+let from = ''
+let to = ''
 
 document.querySelectorAll('.round-button').forEach(button => {
     if (!button.matches('#inviteMember, #createProject')) {
@@ -31,11 +33,16 @@ function addTask(taskType) {
         if (!project.tasks) {
             project.tasks = {}
         }
+        let taskId = 0
         if (!project.tasks[taskType]) {
             project.tasks[taskType] = []
+            taskId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+        }
+        else {
+            taskId = push(ref(database, `projects/${currentProjectId}/tasks`)).key
         }
 
-        project.tasks[taskType].push({ 'text': 'New task', 'user': getUserId() })
+        project.tasks[taskType].push({ id: taskId, text: 'New task', user: getUserId() })
 
         update(projectRef, project).then(updateTasks(taskType))
             .catch((error) => {
@@ -55,11 +62,11 @@ function updateTasks(taskType) {
 
         const taskContainer = document.getElementById(taskType)
         taskContainer.innerHTML = ''
-        project.tasks[taskType].forEach((task, index) => {
+        project.tasks[taskType].forEach((task) => {
             let section = document.createElement('section')
             section.classList.add('task-view__card')
             section.classList.add('draggable')
-            section.id = `${taskType}-${index}`
+            section.id = `${task.id}`
 
             const content = document.createElement('div')
             content.classList.add('task-view__card-content')
@@ -84,14 +91,18 @@ function updateTasks(taskType) {
             buttonImage.src = './images/defaults/comment.png'
             button.appendChild(buttonImage)
             section.appendChild(button)
-            
+
             section.draggable = 'true'
             section.addEventListener('dragstart', () => {
                 section.classList.add('dragging')
+                from = section.parentElement.id
             })
 
             section.addEventListener('dragend', () => {
                 section.classList.remove('dragging')
+                to = section.parentElement.id
+
+                updateTaskOrder()
             })
             draggables.push(section)
             taskContainer.appendChild(section)
@@ -137,7 +148,6 @@ function sentInvitation() {
         'email': email,
         'project_id': currentProjectId
     }
-    console.log(invite)
 
     const inviteId = push(ref(database, 'invitations')).key
     set(ref(database, 'invitations/' + inviteId), invite)
@@ -161,7 +171,6 @@ containers.forEach(container => {
 
 function getDragAfterElement(container, y) {
     const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
-    console.log(draggableElements)
 
     return draggableElements.reduce((closest, child) => {
         const box = child.getBoundingClientRect()
@@ -172,6 +181,60 @@ function getDragAfterElement(container, y) {
             return closest
         }
     }, { offset: Number.NEGATIVE_INFINITY }).element
+}
+
+function GetTaskOrder(taskType) {
+    const container = document.getElementById(taskType)
+    let order = []
+    container.querySelectorAll('[id]').forEach((child) => {
+        order.push(child.id)
+    })
+    return order
+}
+
+function updateTaskOrder() {
+    if (from != to) {
+        get(projectRef).then((snapshot) => {
+            let project = snapshot.val()
+            const allTasks = project.tasks[from].concat(project.tasks[to]).filter(task => task !== undefined);
+
+            const fromOrder = GetTaskOrder(from)
+            const toOrder = GetTaskOrder(to)
+
+            project.tasks[from] = []
+            project.tasks[to] = []
+            
+            fromOrder.forEach((taskId) => {
+                project.tasks[from].push(allTasks.find(task => task.id === taskId))
+            })
+            toOrder.forEach((taskId) => {
+                project.tasks[to].push(allTasks.find(task => task.id === taskId))
+            })
+
+            update(projectRef, { tasks: project.tasks })
+        })
+            .catch((error) => {
+                console.error(error.message)
+            })
+    }
+    else {
+        get(projectRef).then((snapshot) => {
+            let project = snapshot.val()
+            const allTasks = project.tasks[from]
+
+            const order = GetTaskOrder(from)
+            project.tasks[from] = []
+
+            order.forEach((taskId) => {
+                project.tasks[from].push(allTasks.find(task => task.id === taskId))
+            })
+
+            update(projectRef, { tasks: project.tasks })
+        })
+            .catch((error) => {
+                console.error(error.message)
+            })
+    }
 }
 
 updateTasks('to-do')

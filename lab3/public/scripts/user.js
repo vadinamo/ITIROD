@@ -28,6 +28,7 @@ function setEmail() {
 
 function getUserProjects(currentProjectId = '') {
     const userProjects = document.getElementById('userProjects')
+    userProjects.innerHTML = ''
     getProjects().then((projectsData) => {
         for (const projectId in projectsData) {
             const link = document.createElement('a')
