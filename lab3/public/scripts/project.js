@@ -150,6 +150,10 @@ function getProjectUsers() {
     get(projectRef).then((snapshot) => {
         const project = snapshot.val()
 
+        if (!project.users.includes(getUserId())) {
+            window.location.replace("index.html");
+        }
+
         const projectMembers = document.getElementById('project-members')
         project.users.forEach((uid) => {
             const member = document.createElement('div')
@@ -278,13 +282,14 @@ function updateTaskOrder() {
     }
 }
 
-updateTasks('to-do')
-updateTasks('in-progress')
-updateTasks('complete')
+getProjectUsers()
 
 setEmail()
 setUsername()
 setImage()
 
 getUserProjects(currentProjectId)
-getProjectUsers()
+
+updateTasks('to-do')
+updateTasks('in-progress')
+updateTasks('complete')
