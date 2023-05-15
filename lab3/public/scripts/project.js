@@ -55,7 +55,7 @@ function addTask(taskType) {
 
 function removeTask(taskId, taskType) {
     get(projectRef).then((snapshot) => {
-        const project = snapshot.val()
+        let project = snapshot.val()
         project.tasks[taskType] = project.tasks[taskType].filter(task => task.id !== taskId);
         update(projectRef, project)
             .then(() => {
@@ -70,8 +70,15 @@ function removeTask(taskId, taskType) {
         })
 }
 
-
-
+function updateTask(newText, id, taskType) {
+    get(projectRef).then((snapshot) => {
+        let project = snapshot.val()
+        project.tasks[taskType].find(task => task.id === id).text = newText
+        update(projectRef, { tasks: project.tasks }).then(() => {
+            updateTasks(taskType)
+        })
+    })
+}
 
 function updateTasks(taskType) {
     get(projectRef).then((snapshot) => {
@@ -92,10 +99,16 @@ function updateTasks(taskType) {
             content.classList.add('task-view__card-content')
             section.appendChild(content)
 
-            const heading = document.createElement('h2')
-            heading.classList.add('task-view__card-text')
-            heading.textContent = task.text
-            content.appendChild(heading)
+            const taskText = document.createElement('input')
+            taskText.classList.add('task-view__card-text')
+            taskText.type = 'text'
+            taskText.value = task.text
+            taskText.addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    updateTask(taskText.value, task.id, taskType)
+                }
+            });
+            content.appendChild(taskText)
 
             const image = document.createElement('img')
             image.classList.add('user-image')

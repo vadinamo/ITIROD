@@ -1,15 +1,8 @@
 .task-view__card-text {
     margin: 0;
-    word-wrap: break-word;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    border: none;
+    font-weight: bold;
+    font-size: large;
     overflow: hidden;
     width: calc(100% - 40px - 1.25rem);
-}
-
-@media screen and (max-width: 900px) {
-    .task-view__card-text {
-        font-size: small;
-    }
 }
