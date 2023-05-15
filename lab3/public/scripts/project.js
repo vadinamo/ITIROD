@@ -1,5 +1,5 @@
 import { database } from './api/config.js'
-import { update, ref, get, set, push } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+import { update, ref, get, set, push, remove } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 import { getUserId, logOut } from './cookie.js'
 import { getUserImage, getUsername } from './requests.js'
 import { setEmail, setUsername, setImage, getUserProjects } from './user.js';
@@ -53,6 +53,26 @@ function addTask(taskType) {
     });
 }
 
+function removeTask(taskId, taskType) {
+    get(projectRef).then((snapshot) => {
+        const project = snapshot.val()
+        project.tasks[taskType] = project.tasks[taskType].filter(task => task.id !== taskId);
+        update(projectRef, project)
+            .then(() => {
+                document.getElementById(taskType).removeChild(document.getElementById(taskId))
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
+    })
+        .catch((error) => {
+            console.error(error.message)
+        })
+}
+
+
+
+
 function updateTasks(taskType) {
     get(projectRef).then((snapshot) => {
         const project = snapshot.val()
@@ -88,8 +108,9 @@ function updateTasks(taskType) {
             button.classList.add('round-button')
 
             const buttonImage = document.createElement('img')
-            buttonImage.src = './images/defaults/comment.png'
+            buttonImage.src = './images/defaults/trashcan.png'
             button.appendChild(buttonImage)
+            button.addEventListener('click', () => removeTask(task.id, taskType));
             section.appendChild(button)
 
             section.draggable = 'true'
@@ -203,7 +224,7 @@ function updateTaskOrder() {
 
             project.tasks[from] = []
             project.tasks[to] = []
-            
+
             fromOrder.forEach((taskId) => {
                 project.tasks[from].push(allTasks.find(task => task.id === taskId))
             })
@@ -212,6 +233,10 @@ function updateTaskOrder() {
             })
 
             update(projectRef, { tasks: project.tasks })
+                .then(() => {
+                    updateTasks(from)
+                    updateTasks(to)
+                })
         })
             .catch((error) => {
                 console.error(error.message)
@@ -230,6 +255,9 @@ function updateTaskOrder() {
             })
 
             update(projectRef, { tasks: project.tasks })
+                .then(() => {
+                    updateTasks(from)
+                })
         })
             .catch((error) => {
                 console.error(error.message)
