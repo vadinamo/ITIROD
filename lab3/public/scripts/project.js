@@ -131,7 +131,18 @@ function updateTasks(taskType) {
                 section.classList.add('dragging')
                 from = section.parentElement.id
             })
+            section.addEventListener('touchstart', e => {
+                e.preventDefault()
+                section.classList.add('dragging')
+                from = section.parentElement.id
+            })
 
+            section.addEventListener('touchend', () => {
+                section.classList.remove('dragging')
+                to = section.parentElement.id
+
+                updateTaskOrder()
+            })
             section.addEventListener('dragend', () => {
                 section.classList.remove('dragging')
                 to = section.parentElement.id
@@ -195,16 +206,33 @@ function sentInvitation() {
 }
 
 containers.forEach(container => {
-    container.addEventListener('dragover', e => {
-        e.preventDefault()
-        const afterElement = getDragAfterElement(container, e.clientY)
-        const draggable = document.querySelector('.dragging')
-        if (afterElement == null) {
-            container.appendChild(draggable)
-        } else {
-            container.insertBefore(draggable, afterElement)
+    container.addEventListener('dragover', handleDragOver)
+    container.addEventListener('touchmove', handleDragOver)
+
+    function handleDragOver(e) {
+        try {
+            e.preventDefault()
+
+            let clientY
+
+            if (e.type === 'dragover') {
+                clientY = e.clientY
+            } else if (e.type === 'touchmove') {
+                clientY = e.touches[0].clientY
+            }
+
+            const afterElement = getDragAfterElement(container, clientY)
+            const draggable = document.querySelector('.dragging')
+
+            if (afterElement == null) {
+                container.appendChild(draggable)
+            } else {
+                container.insertBefore(draggable, afterElement)
+            }
+        } catch {
+            return
         }
-    })
+    }
 })
 
 function getDragAfterElement(container, y) {
