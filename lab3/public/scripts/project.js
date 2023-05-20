@@ -132,12 +132,32 @@ function updateTasks(taskType) {
                 from = section.parentElement.id
             })
             section.addEventListener('touchstart', e => {
+                const touchTarget = e.target;
+
+                const isButton = touchTarget.matches('button');
+                const isImg = touchTarget.matches('img');
+                const isInput = touchTarget.matches('input');
+
+                if (isButton || isImg || isInput) {
+                    return
+                }
+
                 e.preventDefault()
                 section.classList.add('dragging')
                 from = section.parentElement.id
             })
 
-            section.addEventListener('touchend', () => {
+            section.addEventListener('touchend', e => {
+                const touchTarget = e.target;
+
+                const isButton = touchTarget.matches('button');
+                const isImg = touchTarget.matches('img');
+                const isInput = touchTarget.matches('input');
+
+                if (isButton || isImg || isInput) {
+                    return
+                }
+
                 section.classList.remove('dragging')
                 to = section.parentElement.id
 
