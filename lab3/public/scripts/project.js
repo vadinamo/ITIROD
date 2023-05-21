@@ -177,38 +177,38 @@ function updateTasks(taskType) {
     });
 }
 
-function getProjectUsers() {
-    get(projectRef).then((snapshot) => {
-        const project = snapshot.val()
+async function getProjectUsers() {
+    try {
+        const snapshot = await get(projectRef);
+        const project = snapshot.val();
 
         if (!project.users.includes(getUserId())) {
             window.location.replace("index.html");
         }
 
-        const projectMembers = document.getElementById('project-members')
-        project.users.forEach((uid) => {
-            const member = document.createElement('div')
-            member.classList.add('project-members__member')
+        const projectMembers = document.getElementById('project-members');
+        projectMembers.innerHTML = '';
 
-            const image = document.createElement('img')
-            image.classList.add('user-image')
-            getUserImage(uid).then((url) => {
-                image.src = url
-            })
-            member.appendChild(image)
+        for (const uid of project.users) {
+            const member = document.createElement('div');
+            member.classList.add('project-members__member');
 
-            const name = document.createElement('p')
-            getUsername(uid).then((username) => {
-                name.textContent = username
-            })
-            name.textContent = 'username'
-            member.appendChild(name)
+            const image = document.createElement('img');
+            image.classList.add('user-image');
+            const url = await getUserImage(uid);
+            image.src = url;
+            member.appendChild(image);
 
-            projectMembers.appendChild(member)
-        })
-    }).catch((error) => {
-        console.error(error.message)
-    });
+            const name = document.createElement('p');
+            const username = await getUsername(uid);
+            name.textContent = username;
+            member.appendChild(name);
+
+            projectMembers.appendChild(member);
+        }
+    } catch (error) {
+        console.error(error.message);
+    }
 }
 
 function sentInvitation() {
